@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>News</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Other style -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="/stylesheets/app.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="news-masthead">
+        <div class="container">
+            <nav class="nav navbar navbar-light bg-faded news-nav">
+
+                <a class="navbar-brand" href="/">
+                    <i class="far fa-newspaper"></i>
+                    News
+                </a>
+
+                <form class="form-inline" action="/source" method="GET">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle nav-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            By Country
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="submit" value="country=au,Australia" name="news_selection">
+                                Australia
+                            </button>
+                            <button class="dropdown-item" type="submit" value="country=ca,Canada" name="news_selection">
+                                Canada
+                            </button>
+                            <button class="dropdown-item" type="submit" value="country=in,India" name="news_selection">
+                                India
+                            </button>
+                            <button class="dropdown-item" type="submit" value="country=ie,Ireland" name="news_selection">
+                                Ireland
+                            </button>
+                            <button class="dropdown-item" type="submit" value="country=gb,The United Kingdom" name="news_selection">
+                                United Kingdom
+                            </button>
+                            <button class="dropdown-item" type="submit" value="country=us,The United States" name="news_selection">
+                                United States
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle nav-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            By Source
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="submit" value="sources=al-jazeera-english,Al Jazeera" name="news_selection">
+                                Al Jazeera
+                            </button>
+                            <button class="dropdown-item" type="submit" value="sources=associated-press,Associated Press" name="news_selection">
+                                Associated Press
+                            </button>
+                            <button class="dropdown-item" type="submit" value="sources=bbc-news,The BBC" name="news_selection">
+                                BBC
+                            </button>
+                            <button class="dropdown-item" type="submit" value="sources=hacker-news,Hacker News" name="news_selection">
+                                Hacker News
+                            </button>
+                            <button class="dropdown-item" type="submit" value="sources=reuters,Reuters" name="news_selection">
+                                Reuters
+                            </button>
+                            <button class="dropdown-item" type="submit" value="sources=techcrunch,TechCrunch" name="news_selection">
+                                TechCrunch
+                            </button>
+                            <button class="dropdown-item" type="submit" value="sources=the-economist,The Economist" name="news_selection">
+                                The Economist
+                            </button>
+                            <button class="dropdown-item" type="submit" value="sources=time,Time" name="news_selection">
+                                Time
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </nav>
+        </div>
+    </div>

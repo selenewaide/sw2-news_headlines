@@ -1,0 +1,83 @@
+<% include ./partials/header %>
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">
+      Top <%= data["totalResults"] %> Headlines From <%= data["source_name"] %>
+    </h1>
+  </div>
+</section>
+
+<div class="container news-container">
+  <% data["articles"].forEach(function(article) { %>
+
+  <!-- date/time error handling -->
+  <% if (article["publishedAt"] == null) {  %>
+  <% var article_publishedAt = 'N/A'; %>
+  <% } else { %>
+  <% article_publishedAt = new Date(article["publishedAt"]).toUTCString(); %>
+  <% }  %>
+
+  <!-- image error handling -->
+  <% if (article["urlToImage"] == null) {  %>
+  <% var article_image = "/img/no_article_img.png"; %>
+  <% } else { %>
+  <% article_image = article["urlToImage"]; %>
+  <% }  %>
+
+  <!-- title error handling -->
+  <% if (article["title"] == null) {  %>
+  <% var article_title = 'N/A'; %>
+  <% } else { %>
+  <% article_title = article["title"]; %>
+  <% }  %>
+
+   <!-- source name error handling -->
+  <% if (article["source"]["name"] == null) {  %>
+  <% var article_source_name = 'N/A'; %>
+  <% } else { %>
+  <% article_source_name = article["source"]["name"]; %>
+  <% }  %>
+
+  <!-- article link error handling -->
+  <% if (article["url"] == null) {  %>
+  <% var article_url = "/error"; %>
+  <% } else { %>
+  <% article_url = article["url"]; %>
+  <% }  %>
+
+
+  <div class="card news-article">
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="news-article-img" style="background-image: url(<%= article_image %>);"></div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-block">
+          <h4 class="card-title"><%= article_title %></h4>
+          <p class="card-text"><%= article["description"] %></p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <ul class="list-group list-group-flush news-list">
+          <li class="list-group-item">From: <%= article_source_name %></li>
+          <li class="list-group-item">On: <%= article_publishedAt %></li>
+        </ul>
+
+        <div class="card-block news-read-more">
+          <a href="<%= article_url %>" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <% }) %>
+</div>
+
+<% include ./partials/footer %>
+
+
